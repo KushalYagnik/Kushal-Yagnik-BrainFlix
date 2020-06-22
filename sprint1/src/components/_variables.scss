@@ -1,0 +1,20 @@
+$desktop-breakpoint: 1200px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 320px;
+$nav-background-fill:#323232;
+$primary-CTA: #0095FF;
+$primary-CTA-hover: #0065AD;
+$divider: #D5D2D1;
+
+@font-face{
+    font-family: 'myfont';
+    src: url('../GlobalFont/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf');
+}
+@font-face{
+    font-family: 'myfont-demi-bold';
+    src: url('../GlobalFont/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Demi.otf');
+}
+@font-face{
+    font-family: 'myfont-bold';
+    src: url('../GlobalFont/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf');
+}
