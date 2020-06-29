@@ -1,45 +1,45 @@
-import React from 'react';
-import axios from 'axios';
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import './Aside.scss';
 
-export default class Aside extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            'videos': []
-        }
-    }
-    componentDidMount(){
-        this.getVideos();
-    }
-    getVideos(){
-        axios.get('./sidevideos.json')
-            .then(res =>{
-                this.setState({'videos': res.data})
-            })
-        // axios.get('https://project-2-api.herokuapp.com/videos/1aivjruutn6a?api_key=a4fdba93-0e3f-4eee-ad03-353825f499c9')
-        //     .then(res => {
-        //         this.setState({'videos':res.data})
-        //         console.log(res.data)
-        //     })
-    }
-    render(){
-        return(
-            this.state.videos.map(function(video,index){
-                return(
-                    <>                         
-                        <div className="nextvideos__unit">
-                            <div className="nextvideos__banner">
-                                <img className="nextvideos__img" src={video.image} alt={index}/>
-                            </div>
-                            <div className="nextvideos__detail">
-                                <div className="nextvideos__title">{video.title}</div>
-                                <h4 className="nextvideos__channel">{video.channel}</h4>
-                            </div>
-                        </div>
-                    </>
-                )
-            })
-        )
+export class Aside extends Component {
+    state = {
+        nextvideoslist: []
+    };
+
+    render() {
+        return (
+            <div className="nextvideos">
+                <h2 className="nextvideos__lbl lbl">Next video</h2>
+                {this.props.nextVid.map(nextVid => {                 
+                    if (nextVid.id !== this.props.currentVid) {
+                        return (
+                            <Link className="nextvideos__links" to={`/video/${nextVid.id}`}>
+                                <div key={nextVid.id} className="nextvideos__unit">
+                                    <ChangedVideo information={nextVid} />
+                                </div>
+                            </Link>
+                        );
+                    }
+                })}
+            </div>
+        );
     }
 }
+
+const ChangedVideo = props => {
+    const { title, channel, image } = props.information;
+    return (
+        <div className="nextvideos__unit">
+            <div className="nextvideos__banner">
+                <img className="nextvideos__img" src={image} alt="" />
+            </div>
+            <div className="nextvideos__detail">
+                <div className="nextvideos__title">{title}</div>
+                <h4 className="nextvideos__channel">{channel}</h4>
+            </div>
+        </div>
+    );
+};
+
+export default Aside

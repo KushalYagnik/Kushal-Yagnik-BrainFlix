@@ -4,19 +4,18 @@ import Header from './components/header/Header';
 import Main from './components/main/Main';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Upload from './components/upload/Upload'
+import NowPlaying from './components/nowplaying/NowPlaying';
 
 function App(){
   return (
     <div className="App">
-      {/* <Header/>
-      <Main/> */}
       <BrowserRouter>
           <Header />
           <Switch>
-            {/* <Route
+            <Route
               path="/video/:id"
-              render={props => <FeaturedVid {...props} />}
-            /> */}
+              render={props => <NowPlaying {...props} />}
+            />
             <Route path="/upload" component={Upload} />
             <Route exact path="/" component={Main} />
           </Switch>
