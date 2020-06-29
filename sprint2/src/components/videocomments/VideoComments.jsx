@@ -7,7 +7,7 @@ export class VideoComments extends Component {
                 <h2 className="nowplaying__comments-header">3 Comments</h2>
                 <form className="nowplaying__form" onSubmit={this.newComment}>
                     <div className="nowplaying__form-img-wrapper">
-                        <img className="nowplaying__form-img" src="./assets/Images/Mohan-muruge.jpg" alt="comment-img" />
+                        <img className="nowplaying__form-img" src="../assets/Images/Mohan-muruge.jpg" alt="comment-img" />
                     </div>
                     <div className="nowplaying__form-inputs">
                         <div className="nowplaying__form-comment-wrapper">

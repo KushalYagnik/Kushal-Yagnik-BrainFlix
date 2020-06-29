@@ -21,9 +21,9 @@ const Details = (props) => {
             <h4 className="nowplaying__date date">{realTime(timestamp)}</h4>
           </div>
           <div className="nowplaying__reviews">
-            <img src="./assets/Icons/SVG/Icon-views.svg" alt="views-icon" />
+            <img src="../assets/Icons/SVG/Icon-views.svg" alt="views-icon" />
             <h4 className="nowplaying__views">{views}</h4>
-            <img src="./assets/Icons/SVG/Icon-likes.svg" alt="likes-icon" />
+            <img src="../assets/Icons/SVG/Icon-likes.svg" alt="likes-icon" />
             <h4 className="nowplaying__likes">{likes}</h4>
           </div>
         </div>

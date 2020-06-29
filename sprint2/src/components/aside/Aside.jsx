@@ -11,12 +11,12 @@ export class Aside extends Component {
         return (
             <div className="nextvideos">
                 <h2 className="nextvideos__lbl lbl">Next video</h2>
-                {this.props.nextVid.map(nextVid => {                 
-                    if (nextVid.id !== this.props.currentVid) {
+                {this.props.nextVid.map(nextVids => {                 
+                    if (nextVids.id !== this.props.currentVid) {
                         return (
-                            <Link className="nextvideos__links" to={`/video/${nextVid.id}`}>
-                                <div key={nextVid.id} className="nextvideos__unit">
-                                    <ChangedVideo information={nextVid} />
+                            <Link className="nextvideos__links" to={`/video/${nextVids.id}`}>
+                                <div key={nextVids.id} className="nextvideos__unit">
+                                    <ChangedVideo information={nextVids} />
                                 </div>
                             </Link>
                         );

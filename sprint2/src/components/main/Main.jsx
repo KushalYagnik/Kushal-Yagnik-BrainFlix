@@ -37,7 +37,7 @@ export class Main extends Component {
                 <VideoPlayer stats={this.state.nowplaying} />
                 <div className="content">
                     <div className="nowplaying">
-                        <VideoDetails statistics={this.state.nowplaying} />
+                        <VideoDetails stats={this.state.nowplaying} />
                         <VideoComments comments={this.state.nowplaying.comments} />
                     </div>
                     <Aside nextVid={this.state.nextvideos} currentVid={this.state.nowplaying.id}
