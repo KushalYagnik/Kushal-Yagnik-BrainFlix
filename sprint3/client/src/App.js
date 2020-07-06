@@ -18,7 +18,8 @@ function App(){
             />
             <Route path="/upload" component={Upload} />
             <Route exact path="/" component={Main} />
-            <Route exact path="/videos" component={Main} />
+            {/* Don't know if this path is required...keeping it for now */}
+            <Route exact path="/videos" component={Main} /> 
           </Switch>
         </BrowserRouter>
     </div>

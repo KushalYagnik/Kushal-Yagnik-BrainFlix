@@ -24,8 +24,6 @@ app.get("/videos", (req, res) => {
             res.status(500);
             res.send("Something went wrong!")
         }
-        // res.header("Access-Control-Allow-Origin", "*");
-        // res.header("Content-Type", "application/json");
         res.status(200);
         res.send(Buffer.from(data, "base64"))  
     });
@@ -46,8 +44,6 @@ app.get("/videos/:id", (req, res) => {
             let result = data.find((video) => video.id == req.params.id);
             if (result)
             {
-                // res.header("Access-Control-Allow-Origin", "*");
-                // res.header("Content-Type", "application/json");
                 res.status(200)
                 res.send(JSON.stringify(result))
                 return;
