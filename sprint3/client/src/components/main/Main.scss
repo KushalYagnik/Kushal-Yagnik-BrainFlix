@@ -1,0 +1,137 @@
+@import '../variables';
+@import '../mixins';
+
+.main{
+    color: #323232;
+}
+//FOR ALL DATES 
+.date{
+    color: grey;
+    font-weight: 400;
+}
+//FOR ALL LABELS
+.lbl{
+    text-transform: uppercase;
+    color: grey;
+    font-size: small;
+    font-weight: bold;
+    margin: 10px 0;
+}
+//FOR ALL INPUTS
+.userIn{
+    border: 1px solid $divider;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: none;
+    &:focus{
+        outline: none;
+        border: 1px solid $primary-CTA;
+    }
+}
+.hero{
+    width: 100%;
+    height: 13em;
+    &__video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+//NOW PLAYING
+.nowplaying{
+    //Now playing video details
+    &__details{
+        margin: 1em;
+    }
+    &__videodetails{
+        text-align: left;
+        border-bottom: 2px solid $divider;
+        margin-bottom: 1em;
+    }
+    &__title{
+        font-size: 1.6em;
+    }
+    //Now playing info
+    &__info{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 1em 0;
+    }
+    &__artist{
+        margin-right: 1em;
+    }
+    &__reviews{
+        display: flex;
+        align-items: flex-end;
+        margin: 1em 0;
+    }
+    &__views{
+        margin: 0 1em;
+    }
+    &__likes{
+        margin: 0 1em;
+    }
+    &__summary{
+        text-align: left;
+        font-size: 13px;
+        font-weight: 400;
+        color: grey;
+        line-height: 1.5em;
+    }
+    //Now playing video comments
+    &__comments{
+        margin: 1em;
+        text-align: left;
+        &-header{
+            font-size: large;
+        }
+        &-unit{
+            display: flex;
+            padding: 1em 0;
+            border-bottom: 1px solid $divider;
+            border-top: 1px solid $divider;
+        }
+        &-imgwrapper{
+            margin-right: 1em;
+        }
+        &-img{
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            background-color: $divider;
+        }
+        &-post{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+        }
+    }
+    &__form{
+        margin: 1em auto;
+        display: flex;
+        &-img-wrapper{
+            margin-right: 1em;
+        }
+        &-img{
+            margin-top: 1em;
+            object-fit: cover;
+            height: 3em;
+            width: 3em;
+            border-radius: 50%;
+        }
+        &-comment{
+            resize: none;
+            box-sizing: border-box;
+            width: 100%;
+            // height: 7em;
+            padding: 1em;
+            margin: 7px 0 16px 0;
+        }
+    }
+}
+
+
+@include tablet;
+@include desktop;

@@ -1,0 +1,16 @@
+{
+  "name": "brain-flix-sprint3-server",
+  "version": "1.0.0",
+  "description": "Server for API requests of BrainFlix-Sprint-3",
+  "main": "server.js",
+  "scripts": {
+    "test": "BrainFlix Server Started!"
+  },
+  "author": "KushalYagnik",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "uuid": "^8.2.0"
+  }
+}

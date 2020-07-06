@@ -1,0 +1,47 @@
+@import '../variables';
+@import '../mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: myfont;
+}
+.btn{
+    background-color: $primary-CTA;
+    color: white;
+    border: none;
+    width: 15em;
+    height: 3.5em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+    &:hover{
+        background-color: $primary-CTA-hover;
+        cursor: pointer;
+    }
+}
+.header{
+    margin: 1em;
+    &__searchbox{
+        width: 90%;
+        margin: 8px 0;
+        padding: 1em 0 1em 2em;
+        background: url('../../assets/Icons/SVG/Icon-search.svg') 2% 48% no-repeat;
+    }
+    &__buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__profile{
+        object-fit: cover;
+        width: 3.2em;
+        height: 3.2em;
+        border-radius: 50%;
+    }
+}
+@include tablet;
+@include desktop;

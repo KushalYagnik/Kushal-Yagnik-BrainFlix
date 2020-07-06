@@ -1,0 +1,51 @@
+import React, { Component } from 'react';
+import axios from 'axios';
+import Aside from '../aside/Aside';
+import './Main.scss';
+import VideoComments from '../videocomments/VideoComments';
+import VideoPlayer from '../videoplayer/VideoPlayer';
+import VideoDetails from '../videodetails/VideoDetails';
+
+
+export class Main extends Component {
+    state = { nowplaying: { id: "", comments: [] }, nextvideos: [] };
+    componentDidMount() {
+        axios.get(`http://localhost:8080/videos/1af0jruup5gu`)
+            .then(res => {
+                this.setState({
+                    nowplaying: res.data
+                });
+            })
+            .catch(err => {
+                console.error(err)
+            });
+        axios.get(`http://localhost:8080/videos`)
+            .then(res => {
+                this.setState({
+                    nextvideos: res.data
+                });
+            })
+            .catch(err => {
+                console.error(err)
+            });
+    }
+
+    render() {
+        return (
+            <div>
+                <VideoPlayer stats={this.state.nowplaying} />
+                <div className="content">
+                    <div className="nowplaying">
+                        <VideoDetails stats={this.state.nowplaying} />
+                        <VideoComments comments={this.state.nowplaying.comments} />
+                    </div>
+                    <Aside nextVid={this.state.nextvideos} currentVid={this.state.nowplaying.id}
+                    />
+                </div>
+            </div>
+            
+        )
+    }
+}
+
+export default Main
